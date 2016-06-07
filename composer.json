@@ -25,7 +25,7 @@
     "acclimate/container": "~1"
   },
   "require-dev": {
-    "phpspec/phpspec": "2.4.1",
+    "phpspec/phpspec": "2.5.0",
     "phpunit/phpunit": "~4.8",
     "bossa/phpspec2-expect": "~1",
     "empi89/php-amqp-stubs": "dev-master",
@@ -50,6 +50,9 @@
       "phpspec run",
       "phpunit"
     ]
+  },
+  "config": {
+    "bin-dir": "bin"
   },
   "extra": {
     "branch-alias": {

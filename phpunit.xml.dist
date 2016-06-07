@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="PhpServiceBus Core Acceptance Test Suite">
+        <testsuite name="PHPServiceBus Core Acceptance Test Suite">
             <directory>tests/acceptance</directory>
         </testsuite>
     </testsuites>
