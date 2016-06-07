@@ -1,0 +1,59 @@
+{
+  "name": "phpservicebus/core",
+  "description": "PHP Service Bus core library",
+  "keywords": [
+    "bus",
+    "service",
+    "service bus",
+    "command bus",
+    "cqrs"
+  ],
+  "homepage": "https://github.com/phpservicebus/core",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Farcas",
+      "email": "alex.farcas@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "ext-mbstring": "*",
+    "ext-amqp": "*",
+    "container-interop/container-interop": "~1",
+    "acclimate/container": "~1"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "2.4.1",
+    "phpunit/phpunit": "~4.8",
+    "bossa/phpspec2-expect": "~1",
+    "empi89/php-amqp-stubs": "dev-master",
+    "richardfullmer/rabbitmq-management-api": "1.0.2",
+    "henrikbjorn/phpspec-code-coverage": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PSB\\Core\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "acceptance\\PSB\\Core\\": "tests\\acceptance",
+      "acceptancesupport\\PSB\\Core\\": "tests\\acceptancesupport",
+      "spec\\PSB\\Core\\": "tests\\spec",
+      "specsupport\\PSB\\Core\\": "tests\\specsupport"
+    }
+  },
+  "scripts": {
+    "test": [
+      "phpspec run",
+      "phpunit"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-devel": "1.x-dev"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+suites:
+  default_suite:
+    namespace: PSB\Core
+    psr4_prefix: PSB\Core
+    src_path: %paths.config%/src
+    spec_path: %paths.config%/tests
+#extensions:
+#    - PhpSpec\Extension\CodeCoverageExtension

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="PhpServiceBus Core Acceptance Test Suite">
+            <directory>tests/acceptance</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+    <listeners>
+        <listener class="acceptancesupport\PSB\Core\PhpUnit\TestExecutionConfiguratorLoader"
+                  file="tests/acceptancesupport/PhpUnit/TestExecutionConfiguratorLoader.php">
+            <arguments>
+                <string>acceptancesupport\PSB\Core\RabbitMq\RabbitMqTestExecutionConfigurator</string>
+                <array name="connection credentials">
+                    <element key="host">
+                        <string>127.0.0.1</string>
+                    </element>
+                    <element key="port">
+                        <string>5672</string>
+                    </element>
+                    <element key="vhost">
+                        <string>/</string>
+                    </element>
+                    <element key="login">
+                        <string>guest</string>
+                    </element>
+                    <element key="password">
+                        <string>guest</string>
+                    </element>
+                </array>
+            </arguments>
+        </listener>
+    </listeners>
+</phpunit>
