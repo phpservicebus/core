@@ -34,8 +34,6 @@ class OutgoingPhysicalMessage
         $this->messageId = $messageId;
         $this->headers = $headers;
         $this->body = $body;
-
-        //$this->headers[HeaderTypeEnum::TIME_SENT] = date('c');
     }
 
     /**

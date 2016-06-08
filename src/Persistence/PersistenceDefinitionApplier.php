@@ -11,7 +11,7 @@ class PersistenceDefinitionApplier
 {
     public function apply(Settings $settings)
     {
-        /** @var EnabledPersistence[] $enabledPersistences */
+        /** @var EnabledPersistence[]|null $enabledPersistences */
         $enabledPersistences = $settings->tryGet(KnownSettingsEnum::ENABLED_PERSISTENCES);
 
         if (!$enabledPersistences) {

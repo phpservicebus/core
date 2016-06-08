@@ -71,7 +71,7 @@ class StepChainBuilder
             }
         }
 
-        if (!$registrations) {
+        if (empty($registrations)) {
             return [];
         }
 
@@ -192,7 +192,7 @@ class StepChainBuilder
      */
     private function sort(array $stageSteps)
     {
-        if (!$stageSteps) {
+        if (empty($stageSteps)) {
             return [];
         }
 
@@ -287,8 +287,8 @@ class StepChainBuilder
     }
 
     /**
-     * @param $contextClass
-     * @param $stages
+     * @param string $contextClass
+     * @param array  $stages
      *
      * @throws PipelineBuildingException
      */

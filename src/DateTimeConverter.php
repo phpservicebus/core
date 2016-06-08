@@ -17,14 +17,4 @@ class DateTimeConverter
     {
         return $date->format($this->format);
     }
-
-    /**
-     * @param string $date
-     *
-     * @return \DateTime
-     */
-    public function fromWireFormattedString($date)
-    {
-        return \DateTime::createFromFormat($this->format, $date, new \DateTimeZone('UTC'));
-    }
 }

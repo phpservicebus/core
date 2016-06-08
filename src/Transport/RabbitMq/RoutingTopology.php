@@ -183,7 +183,7 @@ class RoutingTopology
      *
      * @return string
      */
-    static public function getSafeName($address)
+    public static function getSafeName($address)
     {
         return preg_replace("/[^a-zA-Z0-9-_.:]/i", '.', $address);
     }

@@ -8,7 +8,7 @@ class StorageType
 {
     const OUTBOX = 'Outbox';
 
-    static private $constants = ['OUTBOX' => self::OUTBOX];
+    static protected $constants = ['OUTBOX' => self::OUTBOX];
 
     /**
      * @var string
@@ -30,7 +30,7 @@ class StorageType
     /**
      * @return StorageType
      */
-    static public function OUTBOX()
+    public static function OUTBOX()
     {
         return new self(static::OUTBOX);
     }
@@ -38,7 +38,7 @@ class StorageType
     /**
      * @return array
      */
-    static public function getConstants()
+    public static function getConstants()
     {
         return static::$constants;
     }

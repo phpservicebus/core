@@ -26,7 +26,7 @@ class OutgoingLogicalMessage
 
         $this->messageInstance = $messageInstance;
         $this->messageClass = $messageClass;
-        if (!$messageClass) {
+        if ($messageClass === null || $messageClass === '') {
             $this->messageClass = get_class($messageInstance);
         }
     }
@@ -61,7 +61,8 @@ class OutgoingLogicalMessage
     /**
      * @param mixed $messageInstance
      */
-    private function assertObject($messageInstance) {
+    private function assertObject($messageInstance)
+    {
         if (!is_object($messageInstance)) {
             throw new InvalidArgumentException('Message instance must be an object.');
         }
