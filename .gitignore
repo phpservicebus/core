@@ -3,6 +3,7 @@
 .project
 .settings/
 vendor
+bin
 build
 coverage
 phpunit.xml

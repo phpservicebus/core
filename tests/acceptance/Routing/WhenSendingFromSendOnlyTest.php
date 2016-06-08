@@ -73,7 +73,7 @@ class ReceivingEndpoint extends EndpointConfiguratorProxy
     public function init()
     {
         $this->useContainer(new Container([ReceivingHandler::class => new ReceivingHandler($this->scenarioContext)]));
-        $this->registerEventHandler(MyCommand::class, ReceivingHandler::class);
+        $this->registerCommandHandler(MyCommand::class, ReceivingHandler::class);
     }
 }
 
