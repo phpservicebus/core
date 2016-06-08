@@ -29,7 +29,7 @@ class OutgoingLogicalMessageMutationPipelineStep implements PipelineStepInterfac
     {
         $mutatorIds = $this->mutatorRegistry->getOutgoingLogicalMessageMutatorIds();
 
-        if (!$mutatorIds) {
+        if (empty($mutatorIds)) {
             $next();
             return;
         }

@@ -49,7 +49,7 @@ abstract class Feature
      * Method will always be executed and should be used to determine whether to enable or disable the feature,
      * configure default settings, configure dependencies, configure prerequisites and register startup tasks.
      */
-    public abstract function describe();
+    abstract public function describe();
 
     /**
      * Method is called if all defined conditions are met and the feature is marked as enabled.
@@ -60,7 +60,7 @@ abstract class Feature
      * @param BuilderInterface      $builder
      * @param PipelineModifications $pipelineModifications
      */
-    public abstract function setup(
+    abstract public function setup(
         Settings $settings,
         BuilderInterface $builder,
         PipelineModifications $pipelineModifications

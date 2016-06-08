@@ -65,7 +65,7 @@ class FeatureActivator
      */
     private function sort()
     {
-        if (!$this->features) {
+        if (empty($this->features)) {
             return [];
         }
 

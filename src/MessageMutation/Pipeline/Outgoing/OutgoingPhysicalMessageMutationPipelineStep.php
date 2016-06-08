@@ -31,7 +31,7 @@ class OutgoingPhysicalMessageMutationPipelineStep implements PipelineStepInterfa
     {
         $mutatorIds = $this->mutatorRegistry->getOutgoingPhysicalMessageMutatorIds();
 
-        if (!$mutatorIds) {
+        if (empty($mutatorIds)) {
             $next();
             return;
         }

@@ -121,7 +121,7 @@ class JsonSerializer
             $encodedData[$key] = $value;
         }
 
-        if ($encodedKeys) {
+        if (!empty($encodedKeys)) {
             $encodedData[self::UTF8ENCODED_IDENTIFIER_KEY] = $encodedKeys;
         }
 
@@ -222,7 +222,7 @@ class JsonSerializer
         $this->objectStorage->attach($value, $this->objectMappingIndex++);
 
         $paramsToSerialize = $this->getObjectProperties($ref, $value);
-        $data = array(static::CLASS_IDENTIFIER_KEY => $ref->getName());
+        $data = array(static::CLASS_IDENTIFIER_KEY => $ref->name);
         $data += array_map(array($this, 'serializeData'), $this->extractObjectData($value, $ref, $paramsToSerialize));
         return $data;
     }

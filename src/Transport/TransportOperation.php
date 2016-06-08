@@ -12,7 +12,7 @@ class TransportOperation
     private $message;
 
     /**
-     * @var string
+     * @var AddressTagInterface
      */
     private $addressTag;
 
