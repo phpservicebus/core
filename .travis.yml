@@ -1,9 +1,11 @@
 language: php
 
-php:
-  - 5.5
-  - 5.6
-  - 7.0
+matrix:
+  include:
+    - php: 5.5
+    - php: 5.6
+      env: COLLECT_COVERAGE=true
+    - php: 7.0
 
 sudo: false
 
@@ -18,8 +20,12 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-dist
 
 script:
-  - if [ "$TRAVIS_PHP_VERSION" != "7.0" ]; then bin/phpspec run; fi
+  - if [[ $TRAVIS_PHP_VERSION != '7.0' && $COLLECT_COVERAGE != 'true' ]]; then bin/phpspec run; fi
+  - if [[ $TRAVIS_PHP_VERSION != '7.0' && $COLLECT_COVERAGE == 'true' ]]; then bin/phpspec run --config phpspec.yml.ci; fi
   - bin/phpunit
+
+after_script:
+  - if [[ $COLLECT_COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
 
 cache:
   directories:
