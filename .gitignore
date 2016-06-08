@@ -7,4 +7,5 @@ bin
 build
 coverage
 phpunit.xml
+phpspec.yml
 composer.lock

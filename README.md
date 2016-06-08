@@ -11,7 +11,7 @@ PHPServiceBus is a messaging and workflow framework that helps create distribute
 reliable and easy to modify. It supports various messaging patterns and can provide abstraction over multiple 
 queueing technologies. Out of the box it supports RabbitMQ.
 
-PHPServiceBus is massively inspired from NserviceBus with a touch of MassTransit.
+PHPServiceBus is massively inspired from NServiceBus with a touch of MassTransit.
 
 ## Install
 
@@ -45,7 +45,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/phpservicebus/core.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/phpservicebus/core/master.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/phpservicebus/core/devel.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/phpservicebus/core.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/phpservicebus/core.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/phpservicebus/core.svg?style=flat-square

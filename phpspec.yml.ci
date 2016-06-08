@@ -4,5 +4,8 @@ suites:
     psr4_prefix: PSB\Core
     src_path: %paths.config%/src
     spec_path: %paths.config%/tests
-#extensions:
-#    - PhpSpec\Extension\CodeCoverageExtension
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
+code_coverage:
+  format: clover
+  output: coverage.clover
