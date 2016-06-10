@@ -31,7 +31,7 @@ class JsonSerializationDefinition extends SerializationDefinition
     public function formalize(Settings $settings)
     {
         return function () {
-            return new JsonMessageSerializer(new JsonSerializer());
+            return new JsonMessageSerializer(new JsonSerializer(new ObjectNormalizer(), new JsonEncoder()));
         };
     }
 }
