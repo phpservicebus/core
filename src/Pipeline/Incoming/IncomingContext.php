@@ -124,25 +124,25 @@ abstract class IncomingContext extends PipelineStageContext implements MessagePr
     }
 
     /**
-     * @param object                $message
+     * @param string                $messageFqcn
      * @param SubscribeOptions|null $options
      */
-    public function subscribe($message, SubscribeOptions $options = null)
+    public function subscribe($messageFqcn, SubscribeOptions $options = null)
     {
         $options = $options ?: $this->outgoingOptionsFactory->createSubscribeOptions();
 
-        $this->busOperations->subscribe($message, $options, $this);
+        $this->busOperations->subscribe($messageFqcn, $options, $this);
     }
 
     /**
-     * @param object                  $message
+     * @param string                  $messageFqcn
      * @param UnsubscribeOptions|null $options
      */
-    public function unsubscribe($message, UnsubscribeOptions $options = null)
+    public function unsubscribe($messageFqcn, UnsubscribeOptions $options = null)
     {
         $options = $options ?: $this->outgoingOptionsFactory->createUnsubscribeOptions();
 
-        $this->busOperations->unsubscribe($message, $options, $this);
+        $this->busOperations->unsubscribe($messageFqcn, $options, $this);
     }
 
     /**

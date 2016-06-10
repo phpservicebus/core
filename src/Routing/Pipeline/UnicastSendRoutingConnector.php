@@ -43,7 +43,7 @@ class UnicastSendRoutingConnector implements StageConnectorInterface
     {
         $addressTags = $this->unicastRouter->route($context->getSendOptions(), $context->getMessageClass());
 
-        if (!$addressTags) {
+        if (empty($addressTags)) {
             throw new RoutingException(
                 "The message destination could not be determined. You may have misconfigured the destination for this kind of message ({$context->getMessageClass()}) when you registered the message to endpoint mappings."
             );

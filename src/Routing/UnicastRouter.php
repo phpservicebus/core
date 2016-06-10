@@ -48,7 +48,7 @@ class UnicastRouter implements UnicastRouterInterface
         $destination = $options->isRoutedToLocalInstance() ? $this->localAddress : null;
         $destination = $options->getExplicitDestination() ?: $destination;
 
-        if (!$destination) {
+        if ($destination === null || $destination === '') {
             $messageTypes = array_merge([$messageClass], array_values(class_implements($messageClass, true)));
             $endpointNames = $this->unicastRoutingTable->getEndpointNamesFor($messageTypes);
             $destinations = [];

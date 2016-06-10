@@ -20,11 +20,4 @@ class DateTimeConverterSpec extends ObjectBehavior
     {
         $this->toWireFormattedString(new \DateTime('2016-03-11T03:45:40Z'))->shouldReturn('2016-03-11T03:45:40Z');
     }
-
-    function it_converts_from_wire_string_to_datetime()
-    {
-        $this->fromWireFormattedString('2016-03-11T03:45:40Z')->shouldBeLike(
-            new \DateTime('2016-03-11T03:45:40Z', new \DateTimeZone('UTC'))
-        );
-    }
 }

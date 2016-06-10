@@ -59,6 +59,8 @@ class MessageProcessor
         EndpointControlToken $endpointControlToken
     ) {
         try {
+            $messageId = '';
+            $headers = [];
             $pushMessage = false;
             try {
                 $messageId = $this->messageConverter->retrieveMessageId($envelope);

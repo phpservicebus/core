@@ -60,7 +60,8 @@ class UnicastReplyRoutingConnector implements StageConnectorInterface
             );
         }
 
-        if (!$incomingPhysicalMessage->getReplyToAddress()) {
+        $replyToAddress = $incomingPhysicalMessage->getReplyToAddress();
+        if ($replyToAddress === null || $replyToAddress === '') {
             $messageType = $incomingPhysicalMessage->getHeaders()[HeaderTypeEnum::ENCLOSED_CLASS];
             throw new RoutingException("No 'ReplyToAddress' found on the '$messageType' being processed");
         }
