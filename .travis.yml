@@ -13,6 +13,9 @@ services:
   - rabbitmq
 
 install:
+  - sudo add-apt-repository ppa:ondrej/php -y
+  - sudo apt-get update
+  - sudo apt-get install -y librabbitmq-dev
   - echo | pecl install -f amqp-1.7.0
 
 before_script:
