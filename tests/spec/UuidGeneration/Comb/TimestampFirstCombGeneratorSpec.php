@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\UuidGeneration\Comb;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\UuidGeneration\Comb\TimestampFirstCombGenerator;
 
 /**
@@ -21,9 +20,10 @@ class TimestampFirstCombGeneratorSpec extends ObjectBehavior
         $this->generate()->shouldMatch('/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i');
     }
 
-    function it_generates_monotone_guids() {
+    function it_generates_monotone_guids()
+    {
         $previous = $this->generate()->getWrappedObject();
-        for($i = 0; $i < 100; $i++){
+        for ($i = 0; $i < 100; $i++) {
             usleep(10);
             $current = $this->generate();
             $current->shouldBeGreaterThan($previous);
@@ -31,7 +31,7 @@ class TimestampFirstCombGeneratorSpec extends ObjectBehavior
         }
     }
 
-    public function getMatchers()
+    public function getMatchers(): array
     {
         return [
             'beGreaterThan' => function ($subject, $key) {

@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Routing;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Routing\UnicastAddressTag;
 use PSB\Core\Routing\UnicastRouter;
 use PSB\Core\Routing\UnicastRoutingTable;
@@ -79,11 +78,4 @@ class UnicastRouterSpec extends ObjectBehavior
             [new UnicastAddressTag('someaddress')]
         );
     }
-}
-
-namespace spec\PSB\Core\Routing\UnicastRouterSpec;
-
-class Message
-{
-
 }

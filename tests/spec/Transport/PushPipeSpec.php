@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Transport;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Pipeline\Incoming\StageContext\TransportReceiveContext;
 use PSB\Core\Pipeline\PipelineInterface;
 use PSB\Core\Transport\PushContext;

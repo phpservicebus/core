@@ -3,12 +3,12 @@
 namespace spec\PSB\Core\Pipeline\Outgoing\StageContext;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+use PSB\Core\Pipeline\Outgoing\StageContext\DispatchContext;
 use PSB\Core\Pipeline\PipelineStageContext;
 use PSB\Core\Transport\TransportOperation;
 
 /**
- * @mixin \PSB\Pipeline\Outgoing\StageContext\DispatchContext
+ * @mixin DispatchContext
  */
 class DispatchContextSpec extends ObjectBehavior
 {

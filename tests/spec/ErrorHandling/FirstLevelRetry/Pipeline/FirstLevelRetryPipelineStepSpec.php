@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\ErrorHandling\FirstLevelRetry\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\ErrorHandling\FirstLevelRetry\FirstLevelRetryHeaderTypeEnum;
 use PSB\Core\ErrorHandling\FirstLevelRetry\FirstLevelRetryPolicy;
 use PSB\Core\ErrorHandling\FirstLevelRetry\FirstLevelRetryStorage;

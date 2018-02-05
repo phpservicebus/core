@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Persistence;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\KnownSettingsEnum;
 use PSB\Core\Persistence\EnabledPersistence;
 use PSB\Core\Persistence\PersistenceDefinitionApplier;
@@ -56,47 +55,5 @@ class PersistenceDefinitionApplierSpec extends ObjectBehavior
         );
 
         $this->shouldThrow('PSB\Core\Exception\RuntimeException')->duringApply($settings);
-    }
-}
-
-namespace spec\PSB\Core\Persistence\PersistenceDefinitionApplierSpec;
-
-use PSB\Core\Persistence\PersistenceDefinition;
-use PSB\Core\Persistence\StorageType;
-use PSB\Core\Util\Settings;
-
-class SupportsNothingDefinition extends PersistenceDefinition
-{
-    public function formalize()
-    {
-    }
-
-    public function createConfigurator(Settings $settings)
-    {
-    }
-}
-
-class TestDefinition extends PersistenceDefinition
-{
-    public static $storageTypeInitializer;
-
-    public function formalize()
-    {
-        $this->supports(StorageType::OUTBOX(), static::$storageTypeInitializer);
-    }
-
-
-    public function createConfigurator(Settings $settings)
-    {
-    }
-}
-
-class GodAwfulCallable
-{
-    public $invoked = false;
-
-    public function __invoke($param)
-    {
-        $this->invoked = true;
     }
 }

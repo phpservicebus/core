@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Routing;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Routing\UnicastAddressTag;
 
 /**

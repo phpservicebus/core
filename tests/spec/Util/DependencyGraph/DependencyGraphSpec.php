@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Util\DependencyGraph;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Util\DependencyGraph\DependencyGraph;
 
 /**

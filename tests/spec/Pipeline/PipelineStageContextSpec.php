@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\ObjectBuilder\BuilderInterface;
 use PSB\Core\Pipeline\PipelineStageContext;
 use spec\PSB\Core\Pipeline\PipelineStageContextSpec\SampleStageContext;
@@ -25,13 +24,4 @@ class PipelineStageContextSpec extends ObjectBehavior
         $this->set(BuilderInterface::class, 'something');
         $this->getBuilder()->shouldReturn('something');
     }
-}
-
-namespace spec\PSB\Core\Pipeline\PipelineStageContextSpec;
-
-use PSB\Core\Pipeline\PipelineStageContext;
-
-class SampleStageContext extends PipelineStageContext
-{
-
 }

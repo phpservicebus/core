@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Serialization\Json;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Serialization\Json\JsonEncoder;
 use PSB\Core\Serialization\Json\JsonSerializer;
 use PSB\Core\Serialization\Json\ObjectNormalizer;

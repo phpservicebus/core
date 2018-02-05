@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Serialization\Json;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Exception\JsonSerializerException;
 use PSB\Core\Serialization\Json\ObjectNormalizer;
 use spec\PSB\Core\Serialization\Json\ObjectNormalizerSpec\AllVisibilitiesClass;
@@ -253,50 +252,5 @@ class ObjectNormalizerSpec extends ObjectBehavior
         $obj->array->shouldBeArray();
         $obj->array[0]->shouldHaveType(\stdClass::class);
         $obj->array[1]->shouldHaveType(EmptyClass::class);
-    }
-}
-
-namespace spec\PSB\Core\Serialization\Json\ObjectNormalizerSpec;
-
-class EmptyClass
-{
-}
-
-class AllVisibilitiesClass
-{
-    public $pub = 'this is public';
-
-    protected $prot = 'protected';
-
-    private $priv = 'dont tell anyone';
-
-    public function getProt()
-    {
-        return $this->prot;
-    }
-
-    public function getPriv()
-    {
-        return $this->priv;
-    }
-}
-
-class MagicClass
-{
-
-    public $show = true;
-
-    public $hide = true;
-
-    public $woke = false;
-
-    public function __sleep()
-    {
-        return ['show'];
-    }
-
-    public function __wakeup()
-    {
-        $this->woke = true;
     }
 }

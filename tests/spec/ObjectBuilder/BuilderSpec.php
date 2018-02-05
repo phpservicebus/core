@@ -2,11 +2,10 @@
 
 namespace spec\PSB\Core\ObjectBuilder;
 
-use Interop\Container\ContainerInterface as InteropContainerInterface;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\ObjectBuilder\Builder;
 use PSB\Core\ObjectBuilder\Container;
+use Psr\Container\ContainerInterface;
 use specsupport\PSB\Core\SimpleCallable;
 
 /**
@@ -18,7 +17,7 @@ class BuilderSpec extends ObjectBehavior
 
     function it_is_initializable_with_external_container(
         Container $internalContainer,
-        InteropContainerInterface $externalContainer
+        ContainerInterface $externalContainer
     ) {
         $this->beConstructedWith($internalContainer, $externalContainer);
         $this->shouldHaveType('PSB\Core\ObjectBuilder\Builder');
@@ -73,7 +72,7 @@ class BuilderSpec extends ObjectBehavior
 
     function it_checks_if_service_is_defined_using_the_external_container_if_not_found_in_internal(
         Container $internalContainer,
-        InteropContainerInterface $externalContainer
+        ContainerInterface $externalContainer
     ) {
         $this->beConstructedWith($internalContainer, $externalContainer);
         $internalContainer->offsetExists($this->irrelevantId)->willReturn(false);
@@ -85,7 +84,7 @@ class BuilderSpec extends ObjectBehavior
 
     function it_checks_if_service_is_defined_using_only_the_internal_container_if_found_in_internal(
         Container $internalContainer,
-        InteropContainerInterface $externalContainer
+        ContainerInterface $externalContainer
     ) {
         $this->beConstructedWith($internalContainer, $externalContainer);
         $internalContainer->offsetExists($this->irrelevantId)->willReturn(true);
@@ -108,7 +107,7 @@ class BuilderSpec extends ObjectBehavior
 
     function it_builds_if_service_is_defined_using_the_external_container_if_not_found_in_internal(
         Container $internalContainer,
-        InteropContainerInterface $externalContainer
+        ContainerInterface $externalContainer
     ) {
         $this->beConstructedWith($internalContainer, $externalContainer);
         $internalContainer->offsetExists($this->irrelevantId)->willReturn(false);
@@ -130,9 +129,9 @@ class BuilderSpec extends ObjectBehavior
 
     function it_throws_on_build_if_service_not_found_in_either_container(
         Container $internalContainer,
-        InteropContainerInterface $externalContainer
+        ContainerInterface $externalContainer
     ) {
-        $this->beConstructedWith($internalContainer,$externalContainer);
+        $this->beConstructedWith($internalContainer, $externalContainer);
         $internalContainer->offsetExists($this->irrelevantId)->willReturn(false);
         $externalContainer->has($this->irrelevantId)->willReturn(false);
 

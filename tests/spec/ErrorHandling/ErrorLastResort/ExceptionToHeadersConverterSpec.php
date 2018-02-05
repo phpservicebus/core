@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\ErrorHandling\ErrorLastResort;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\DateTimeConverter;
 use PSB\Core\ErrorHandling\ErrorLastResort\ErrorLastResortHeaderTypeEnum;
 use PSB\Core\ErrorHandling\ErrorLastResort\ExceptionToHeadersConverter;

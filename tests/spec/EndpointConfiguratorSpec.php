@@ -3,7 +3,6 @@
 namespace spec\PSB\Core;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\EndpointConfigurator;
 use PSB\Core\Feature\FeatureStateEnum;
 use PSB\Core\KnownSettingsEnum;
@@ -284,22 +283,5 @@ class EndpointConfiguratorSpec extends ObjectBehavior
         $this->settingsMock->set($featureFqcn, FeatureStateEnum::DISABLED)->shouldBeCalled();
 
         $this->disableFeature($featureFqcn);
-    }
-}
-
-namespace spec\PSB\Core\EndpointConfiguratorSpec;
-
-use PSB\Core\Persistence\PersistenceDefinition;
-use PSB\Core\Util\Settings;
-
-class TestDefinition extends PersistenceDefinition
-{
-    public function createConfigurator(Settings $settings)
-    {
-
-    }
-
-    public function formalize()
-    {
     }
 }

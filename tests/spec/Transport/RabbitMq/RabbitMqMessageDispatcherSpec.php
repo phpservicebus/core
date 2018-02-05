@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Transport\RabbitMq;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Routing\MulticastAddressTag;
 use PSB\Core\Routing\UnicastAddressTag;
 use PSB\Core\Transport\OutgoingPhysicalMessage;
@@ -124,13 +123,4 @@ class RabbitMqMessageDispatcherSpec extends ObjectBehavior
             )
         ];
     }
-}
-
-namespace spec\PSB\Core\Transport\RabbitMq\RabbitMqMessageDispatcherSpec;
-
-use PSB\Core\Routing\AddressTagInterface;
-
-class UnsupportedAddressTag implements AddressTagInterface
-{
-
 }

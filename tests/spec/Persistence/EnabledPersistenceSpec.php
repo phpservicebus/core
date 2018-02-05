@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Persistence;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Persistence\EnabledPersistence;
 use PSB\Core\Persistence\StorageType;
 use spec\PSB\Core\Persistence\EnabledPersistenceSpec\TestDefinition;
@@ -29,22 +28,5 @@ class EnabledPersistenceSpec extends ObjectBehavior
     {
         $this->beConstructedWith(new TestDefinition(), StorageType::OUTBOX());
         $this->getSelectedStorageType()->shouldBeLike(StorageType::OUTBOX());
-    }
-}
-
-namespace spec\PSB\Core\Persistence\EnabledPersistenceSpec;
-
-use PSB\Core\Persistence\PersistenceDefinition;
-use PSB\Core\Util\Settings;
-
-class TestDefinition extends PersistenceDefinition
-{
-    public function createConfigurator(Settings $settings)
-    {
-
-    }
-
-    public function formalize()
-    {
     }
 }

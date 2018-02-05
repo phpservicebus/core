@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Feature;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Feature\FeatureDependencyGraphBuilder;
 use PSB\Core\Util\DependencyGraph\DependencyGraph;
 use spec\PSB\Core\Feature\FeatureDependencyGraphBuilderSpec\Feature1;
@@ -37,54 +36,5 @@ class FeatureDependencyGraphBuilderSpec extends ObjectBehavior
                 ['f1' => ['f3'], 'f2' => ['f1'], 'f3' => []]
             )
         );
-    }
-}
-
-namespace spec\PSB\Core\Feature\FeatureDependencyGraphBuilderSpec;
-
-use PSB\Core\Feature\Feature;
-use PSB\Core\ObjectBuilder\BuilderInterface;
-use PSB\Core\Pipeline\PipelineModifications;
-use PSB\Core\Util\Settings;
-
-class Feature1 extends Feature
-{
-    public function describe()
-    {
-        $this->dependsOn('f2');
-    }
-
-    public function setup(Settings $settings, BuilderInterface $builder, PipelineModifications $pipelineModifications)
-    {
-    }
-
-    public function getName()
-    {
-        return 'f1';
-    }
-}
-
-class Feature2 extends Feature1
-{
-    public function describe()
-    {
-    }
-
-    public function getName()
-    {
-        return 'f2';
-    }
-}
-
-class Feature3 extends Feature1
-{
-    public function describe()
-    {
-        $this->dependsOn('f1');
-    }
-
-    public function getName()
-    {
-        return 'f3';
     }
 }

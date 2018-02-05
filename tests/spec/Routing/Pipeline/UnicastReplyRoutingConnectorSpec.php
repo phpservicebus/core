@@ -12,7 +12,6 @@ use PSB\Core\Pipeline\Outgoing\StageContext\OutgoingReplyContext;
 use PSB\Core\ReplyOptions;
 use PSB\Core\Routing\Pipeline\UnicastReplyRoutingConnector;
 use PSB\Core\Transport\IncomingPhysicalMessage;
-use spec\PSB\Core\Pipeline\Outgoing\UnicastReplyRoutingConnectorSpec\MockableCallable;
 use specsupport\PSB\Core\ParametrizedCallable;
 
 /**

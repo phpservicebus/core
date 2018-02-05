@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Persistence\InMemory\Outbox;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Outbox\OutboxMessage;
 use PSB\Core\Persistence\InMemory\Outbox\InMemoryOutboxStorage;
 

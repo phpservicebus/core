@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Routing\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\HeaderTypeEnum;
 use PSB\Core\Pipeline\Outgoing\StageContext\OutgoingLogicalMessageContext;
 use PSB\Core\Routing\Pipeline\AttachReplyToAddressPipelineStep;

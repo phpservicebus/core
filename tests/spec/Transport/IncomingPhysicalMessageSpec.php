@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Transport;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\HeaderTypeEnum;
 use PSB\Core\Transport\IncomingPhysicalMessage;
 

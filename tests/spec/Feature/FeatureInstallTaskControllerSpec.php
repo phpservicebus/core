@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Feature;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Feature\FeatureInstallTaskController;
 use PSB\Core\Feature\FeatureInstallTaskInterface;
 use PSB\Core\ObjectBuilder\BuilderInterface;

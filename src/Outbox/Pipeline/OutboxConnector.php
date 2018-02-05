@@ -65,7 +65,7 @@ class OutboxConnector implements StageConnectorInterface
      * @param TransportReceiveContext $context
      * @param callable                $next
      *
-     * @throws \Exception
+     * @throws \Throwable
      */
     public function invoke($context, callable $next)
     {
@@ -86,9 +86,9 @@ class OutboxConnector implements StageConnectorInterface
                 $outboxMessage = new OutboxMessage($messageId, $outboxOperations);
                 $this->outboxStorage->store($outboxMessage);
                 $this->outboxStorage->commit();
-            } catch (\Exception $e) {
+            } catch (\Throwable $t) {
                 $this->outboxStorage->rollBack();
-                throw $e;
+                throw $t;
             }
         } else {
             $pendingTransportOperations = $this->operationsConverter->convertToPendingTransportOperations(

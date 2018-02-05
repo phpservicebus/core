@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Pipeline\BusOperationsContextFactory;
 use PSB\Core\Pipeline\Incoming\IncomingContext;
 use PSB\Core\Pipeline\Outgoing\OutgoingLogicalMessage;

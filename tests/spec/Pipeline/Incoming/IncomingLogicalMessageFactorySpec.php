@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Pipeline\Incoming;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Pipeline\Incoming\IncomingLogicalMessageFactory;
 use spec\PSB\Core\Pipeline\Incoming\IncomingLogicalMessageFactorySpec\DumbObject;
 use spec\PSB\Core\Pipeline\Incoming\IncomingLogicalMessageFactorySpec\DumbObjectImplementingDumbInterface;
@@ -51,18 +50,4 @@ class IncomingLogicalMessageFactorySpec extends ObjectBehavior
             ['spec\PSB\Core\Pipeline\Incoming\IncomingLogicalMessageFactorySpec\DumbInterface']
         );
     }
-}
-
-namespace spec\PSB\Core\Pipeline\Incoming\IncomingLogicalMessageFactorySpec;
-
-class DumbObject
-{
-}
-
-interface DumbInterface
-{
-}
-
-class DumbObjectImplementingDumbInterface implements DumbInterface
-{
 }

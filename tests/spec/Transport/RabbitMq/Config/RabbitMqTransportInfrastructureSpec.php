@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Transport\RabbitMq\Config;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Transport\Config\TransportReceiveInfrastructure;
 use PSB\Core\Transport\Config\TransportSendInfrastructure;
 use PSB\Core\Transport\Config\TransportSubscriptionInfrastructure;

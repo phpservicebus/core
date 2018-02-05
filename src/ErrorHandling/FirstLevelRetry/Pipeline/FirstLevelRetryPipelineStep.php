@@ -36,7 +36,7 @@ class FirstLevelRetryPipelineStep implements PipelineStepInterface
      * @param TransportReceiveContext $context
      * @param callable                $next
      *
-     * @throws \Exception
+     * @throws \Throwable
      */
     public function invoke($context, callable $next)
     {
@@ -48,7 +48,7 @@ class FirstLevelRetryPipelineStep implements PipelineStepInterface
         } catch (MessageDeserializationException $e) {
             // no retry for invalid messages
             throw $e;
-        } catch (\Exception $e) {
+        } catch (\Throwable $t) {
             $messageId = $context->getMessageId();
 
             $numberOfRetries = $this->retryStorage->getFailuresForMessage($messageId);
@@ -59,7 +59,7 @@ class FirstLevelRetryPipelineStep implements PipelineStepInterface
                 $message = $context->getMessage();
                 $message->setHeader(FirstLevelRetryHeaderTypeEnum::RETRIES, $numberOfRetries);
 
-                throw $e;
+                throw $t;
             }
 
             $this->retryStorage->incrementFailuresForMessage($context->getMessageId());

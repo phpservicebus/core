@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Exception\PipelineBuildingException;
 use PSB\Core\Pipeline\StepChainBuilder;
 use PSB\Core\Pipeline\StepRegistration;
@@ -197,74 +196,5 @@ class StepChainBuilderSpec extends ObjectBehavior
                 "Can't find any steps/connectors for stage 'SecondContext'."
             )
         )->duringBuild();
-    }
-}
-
-namespace spec\PSB\Core\Pipeline\StepChainBuilderSpec;
-
-use PSB\Core\Pipeline\PipelineStepInterface;
-use PSB\Core\Pipeline\PipelineTerminatorInterface;
-use PSB\Core\Pipeline\StageConnectorInterface;
-
-class FirstStageStep implements PipelineStepInterface
-{
-    public function invoke($context, callable $next)
-    {
-    }
-
-    public static function getStageContextClass()
-    {
-        return 'FirstContext';
-    }
-}
-
-class SecondStageStep implements PipelineStepInterface
-{
-    public function invoke($context, callable $next)
-    {
-    }
-
-    public static function getStageContextClass()
-    {
-        return 'SecondContext';
-    }
-}
-
-class FirstToSecondStageConnector implements StageConnectorInterface
-{
-    public function invoke($context, callable $next)
-    {
-    }
-
-    public static function getStageContextClass()
-    {
-        return 'FirstContext';
-    }
-
-    public static function getNextStageContextClass()
-    {
-        return 'SecondContext';
-    }
-}
-
-class DuplicateFirstToSecondStageConnector extends FirstToSecondStageConnector
-{
-
-}
-
-class SecondStageTerminator implements PipelineTerminatorInterface
-{
-    public function invoke($context, callable $next)
-    {
-    }
-
-    public static function getStageContextClass()
-    {
-        return 'SecondContext';
-    }
-
-    public static function getNextStageContextClass()
-    {
-        return '';
     }
 }

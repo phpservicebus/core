@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Transport;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Transport\Config\TransportInfrastructure;
 use PSB\Core\Transport\Config\TransportSendInfrastructure;
 use PSB\Core\Transport\OutboundTransport;
