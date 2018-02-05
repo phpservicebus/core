@@ -15,7 +15,7 @@ class TimestampFirstCombGenerator implements UuidGeneratorInterface
         $seconds = (int)$time[1];
         $milliseconds = (int)substr($time[0], 2, 4);
 
-        $params = array(
+        $params = [
             // 32 bits for "time_low"
             $seconds >> 16,
             $seconds & 0xffff,
@@ -32,7 +32,7 @@ class TimestampFirstCombGenerator implements UuidGeneratorInterface
             mt_rand(0, 0xffff),
             mt_rand(0, 0xffff),
             mt_rand(0, 0xffff)
-        );
+        ];
 
         return vsprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x', $params);
     }

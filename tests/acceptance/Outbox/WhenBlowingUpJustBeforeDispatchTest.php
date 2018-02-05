@@ -145,7 +145,7 @@ class BlowUpBeforeDispatchPipelineStep implements PipelineStepInterface
         }
 
         self::$blownOnce = true;
-        throw new \Exception('simulated');
+        throw new \Error('simulated');
     }
 
     public static function getStageContextClass()

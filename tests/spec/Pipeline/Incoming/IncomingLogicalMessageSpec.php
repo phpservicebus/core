@@ -104,17 +104,3 @@ class IncomingLogicalMessageSpec extends ObjectBehavior
         $this->shouldThrow('PSB\Core\Exception\InvalidArgumentException')->duringUpdateInstance('', $factory);
     }
 }
-
-namespace spec\PSB\Core\Pipeline\Incoming\IncomingLogicalMessageSpec;
-
-class DumbObject
-{
-}
-
-interface DumbInterface
-{
-}
-
-class DumbObjectImplementingDumbInterface implements DumbInterface
-{
-}

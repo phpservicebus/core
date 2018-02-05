@@ -8,7 +8,7 @@ class MessageHandlerRegistry
     const COMMAND_HANDLER = 1;
 
     /**
-     * @var string[][]
+     * @var string[][][]
      */
     private $handlers = [self::EVENT_HANDLER => [], self::COMMAND_HANDLER => []];
 

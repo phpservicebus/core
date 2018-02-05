@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Correlation\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Correlation\Pipeline\AttachCorrelationIdPipelineStep;
 use PSB\Core\HeaderTypeEnum;
 use PSB\Core\Pipeline\Outgoing\StageContext\OutgoingLogicalMessageContext;

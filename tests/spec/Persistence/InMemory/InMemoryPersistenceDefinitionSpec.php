@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Persistence\InMemory;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Persistence\InMemory\InMemoryPersistenceConfigurator;
 use PSB\Core\Persistence\InMemory\InMemoryPersistenceDefinition;
 use PSB\Core\Persistence\StorageType;

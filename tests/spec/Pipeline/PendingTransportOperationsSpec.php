@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Pipeline\PendingTransportOperations;
 use PSB\Core\Transport\TransportOperation;
 

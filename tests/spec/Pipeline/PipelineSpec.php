@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Pipeline\Pipeline;
 use PSB\Core\Pipeline\PipelineStageContextInterface;
 use spec\PSB\Core\Pipeline\PipelineSpec\ObservablePipelineConnector;
@@ -56,50 +55,5 @@ class PipelineSpec extends ObjectBehavior
         $connectorContext->getBuilder()->shouldBeCalledTimes(5);
 
         $this->invoke($context);
-    }
-}
-
-namespace spec\PSB\Core\Pipeline\PipelineSpec;
-
-use PSB\Core\Pipeline\PipelineStepInterface;
-use PSB\Core\Pipeline\StageConnectorInterface;
-
-class ObservablePipelineStep implements PipelineStepInterface
-{
-    public function invoke($context, callable $next)
-    {
-        $context->getBuilder();
-        $next();
-    }
-
-    public static function getStageContextClass()
-    {
-    }
-}
-
-class ObservablePipelineConnector implements StageConnectorInterface
-{
-    /**
-     * @var
-     */
-    private $nextContext;
-
-    public function __construct($nextContext)
-    {
-        $this->nextContext = $nextContext;
-    }
-
-    public function invoke($context, callable $next)
-    {
-        $context->getBuilder();
-        $next($this->nextContext);
-    }
-
-    public static function getStageContextClass()
-    {
-    }
-
-    public static function getNextStageContextClass()
-    {
     }
 }

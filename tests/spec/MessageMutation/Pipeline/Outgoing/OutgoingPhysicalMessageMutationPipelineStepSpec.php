@@ -11,7 +11,6 @@ use PSB\Core\MessageMutatorRegistry;
 use PSB\Core\ObjectBuilder\BuilderInterface;
 use PSB\Core\Pipeline\Outgoing\StageContext\OutgoingPhysicalMessageContext;
 use PSB\Core\Transport\OutgoingPhysicalMessage;
-use spec\PSB\Core\MessageMutation\Pipeline\Outgoing\OutgoingPhysicalMessageMutationPipelineStepSpec\Mutator;
 use specsupport\PSB\Core\SimpleCallable;
 
 /**

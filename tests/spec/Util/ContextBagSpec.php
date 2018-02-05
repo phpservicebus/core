@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Util;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Util\ContextBag;
 
 /**

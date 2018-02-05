@@ -14,7 +14,7 @@ abstract class EndpointConfiguratorProxy
 
     public function __call($method, $args)
     {
-        return call_user_func_array(array($this->configurator, $method), $args);
+        return call_user_func_array([$this->configurator, $method], $args);
     }
 
     public function __get($name)

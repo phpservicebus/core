@@ -1,9 +1,10 @@
 <?php
+
 namespace PSB\Core\ObjectBuilder;
 
 
-use Interop\Container\ContainerInterface as InteropContainerInterface;
 use PSB\Core\Exception\ServiceNotFoundException;
+use Psr\Container\ContainerInterface;
 
 class Builder implements BuilderInterface
 {
@@ -13,17 +14,17 @@ class Builder implements BuilderInterface
     private $internalContainer;
 
     /**
-     * @var InteropContainerInterface
+     * @var ContainerInterface
      */
     private $externalContainer;
 
     /**
-     * @param Container                      $internalContainer
-     * @param InteropContainerInterface|null $externalContainer
+     * @param Container               $internalContainer
+     * @param ContainerInterface|null $externalContainer
      */
     public function __construct(
         Container $internalContainer,
-        InteropContainerInterface $externalContainer = null
+        ContainerInterface $externalContainer = null
     ) {
         $this->internalContainer = $internalContainer;
         $this->externalContainer = $externalContainer;
@@ -55,7 +56,7 @@ class Builder implements BuilderInterface
     public function isDefined($id)
     {
         return $this->internalContainer->offsetExists($id) ||
-        $this->externalContainer && $this->externalContainer->has($id);
+            $this->externalContainer && $this->externalContainer->has($id);
     }
 
     /**

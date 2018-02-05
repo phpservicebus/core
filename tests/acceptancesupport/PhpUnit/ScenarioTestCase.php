@@ -4,8 +4,9 @@ namespace acceptancesupport\PSB\Core\PhpUnit;
 
 use acceptancesupport\PSB\Core\Scenario\EndpointTestExecutionConfiguratorInterface;
 use acceptancesupport\PSB\Core\Scenario\ScenarioBuilder;
+use PHPUnit\Framework\TestCase;
 
-abstract class ScenarioTestCase extends \PHPUnit_Framework_TestCase
+abstract class ScenarioTestCase extends TestCase
 {
     /**
      * @var ScenarioBuilder

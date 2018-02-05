@@ -203,6 +203,8 @@ class MessageProcessorSpec extends ObjectBehavior
         ReceiveCancellationToken $cancellationToken,
         EndpointControlToken $endpointControlToken
     ) {
+        $this->messageConverterMock->retrieveMessageId($envelope)->willReturn('someid');
+        $this->messageConverterMock->retrieveHeaders($envelope)->willReturn(['some' => 'headers']);
         $endpointControlToken->isShutdownRequested()->willReturn(true);
 
         $this->process(

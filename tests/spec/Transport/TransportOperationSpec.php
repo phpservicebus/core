@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Transport;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Routing\AddressTagInterface;
 use PSB\Core\Transport\OutgoingPhysicalMessage;
 use PSB\Core\Transport\TransportOperation;

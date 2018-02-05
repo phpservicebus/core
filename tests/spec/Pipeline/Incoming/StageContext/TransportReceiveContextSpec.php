@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Pipeline\Incoming\StageContext;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\EndpointControlToken;
 use PSB\Core\Pipeline\Incoming\StageContext\TransportReceiveContext;
 use PSB\Core\Pipeline\PipelineStageContext;

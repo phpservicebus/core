@@ -3,7 +3,7 @@
 namespace spec\PSB\Core;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Endpoint;
 use PSB\Core\EndpointConfigurator;
 use PSB\Core\StartableEndpoint;

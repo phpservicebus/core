@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\MessageMutation\Pipeline\Outgoing;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\MessageMutation\Pipeline\Outgoing\OutgoingLogicalMessageMutationContext;
 
 /**

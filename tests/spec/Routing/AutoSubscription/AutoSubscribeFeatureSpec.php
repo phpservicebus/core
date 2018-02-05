@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Routing\AutoSubscription;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Routing\AutoSubscription\AutoSubscribeFeature;
 
 /**

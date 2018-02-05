@@ -1,6 +1,6 @@
 suites:
-  default_suite:
+  default:
     namespace: PSB\Core
     psr4_prefix: PSB\Core
-    src_path: %paths.config%/src
-    spec_path: %paths.config%/tests
+    src_path: '%paths.config%/src'
+    spec_path: '%paths.config%/tests'

@@ -30,7 +30,7 @@ class ScenarioContextProxy
     {
         return $this->synchronized(
             function ($context) use ($method, $args) {
-                return call_user_func_array(array($context, $method), $args);
+                return call_user_func_array([$context, $method], $args);
             }
         );
     }

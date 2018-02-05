@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Pipeline\Outgoing;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Pipeline\PipelineStageContext;
 use spec\PSB\Core\Pipeline\Outgoing\OutgoingContextSpec\SampleOutgoingContext;
 
@@ -53,12 +52,4 @@ class OutgoingContextSpec extends ObjectBehavior
         $this->replaceHeaders(['some' => 'value']);
         $this->getHeaders()->shouldReturn(['some' => 'value']);
     }
-}
-
-namespace spec\PSB\Core\Pipeline\Outgoing\OutgoingContextSpec;
-
-use PSB\Core\Pipeline\Outgoing\OutgoingContext;
-
-class SampleOutgoingContext extends OutgoingContext
-{
 }

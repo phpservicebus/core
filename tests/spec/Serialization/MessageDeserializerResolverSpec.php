@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Serialization;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\ContentTypeEnum;
 use PSB\Core\HeaderTypeEnum;
 use PSB\Core\Serialization\MessageDeserializerResolver;
@@ -71,39 +70,5 @@ class MessageDeserializerResolverSpec extends ObjectBehavior
             'spec\PSB\Core\Serialization\MessageDeserializerResolverSpec\JsonSerializer'
         );
         $this->shouldThrow('PSB\Core\Exception\InvalidArgumentException')->duringInstantiation();
-    }
-}
-
-namespace spec\PSB\Core\Serialization\MessageDeserializerResolverSpec;
-
-use PSB\Core\Serialization\MessageSerializerInterface;
-
-class JsonSerializer implements MessageSerializerInterface
-{
-    public function serialize($message)
-    {
-    }
-
-    public function deserialize($string, $messageType)
-    {
-    }
-
-    public function getContentType()
-    {
-    }
-}
-
-class XmlSerializer implements MessageSerializerInterface
-{
-    public function serialize($message)
-    {
-    }
-
-    public function deserialize($string, $messageType)
-    {
-    }
-
-    public function getContentType()
-    {
     }
 }

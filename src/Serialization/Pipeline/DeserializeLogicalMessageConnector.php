@@ -72,8 +72,8 @@ class DeserializeLogicalMessageConnector implements StageConnectorInterface
     {
         try {
             return $this->extractMessage($physicalMessage);
-        } catch (\Exception $e) {
-            throw new MessageDeserializationException($physicalMessage->getMessageId(), $e);
+        } catch (\Throwable $t) {
+            throw new MessageDeserializationException($physicalMessage->getMessageId(), $t);
         }
     }
 

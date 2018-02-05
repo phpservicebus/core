@@ -18,7 +18,6 @@ use PSB\Core\Pipeline\PipelineInterface;
 use PSB\Core\Routing\UnicastAddressTag;
 use PSB\Core\Transport\OutgoingPhysicalMessage;
 use PSB\Core\Transport\TransportOperation;
-use spec\PSB\Core\Outbox\OutboxConnectorSpec\ThrowingCallable;
 use specsupport\PSB\Core\SimpleCallable;
 
 /**

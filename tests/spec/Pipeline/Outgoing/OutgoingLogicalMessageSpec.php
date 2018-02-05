@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Pipeline\Outgoing;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Pipeline\Outgoing\OutgoingLogicalMessage;
 use spec\PSB\Core\Pipeline\Outgoing\OutgoingLogicalMessageSpec\DummyMessage;
 use spec\PSB\Core\Pipeline\Outgoing\OutgoingLogicalMessageSpec\UpdatedDummyMessage;
@@ -61,14 +60,4 @@ class OutgoingLogicalMessageSpec extends ObjectBehavior
     {
         $this->shouldThrow('PSB\Core\Exception\InvalidArgumentException')->duringUpdateInstance('');
     }
-}
-
-namespace spec\PSB\Core\Pipeline\Outgoing\OutgoingLogicalMessageSpec;
-
-class DummyMessage
-{
-}
-
-class UpdatedDummyMessage
-{
 }

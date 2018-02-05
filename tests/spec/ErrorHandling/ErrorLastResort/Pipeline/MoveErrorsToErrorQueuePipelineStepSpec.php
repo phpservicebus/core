@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\ErrorHandling\ErrorLastResort\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\ErrorHandling\ErrorLastResort\ExceptionToHeadersConverter;
 use PSB\Core\ErrorHandling\ErrorLastResort\Pipeline\MoveErrorsToErrorQueuePipelineStep;
 use PSB\Core\Exception\CriticalErrorException;

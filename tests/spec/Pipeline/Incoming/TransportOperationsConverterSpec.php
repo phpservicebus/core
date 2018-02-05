@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Pipeline\Incoming;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Outbox\OutboxMessage;
 use PSB\Core\Outbox\OutboxTransportOperation;
 use PSB\Core\Outbox\OutboxTransportOperationFactory;
@@ -100,13 +99,4 @@ class TransportOperationsConverterSpec extends ObjectBehavior
             $outboxMessage
         );
     }
-}
-
-namespace spec\PSB\Core\Pipeline\Incoming\TransportOperationsConverterSpec;
-
-use PSB\Core\Routing\AddressTagInterface;
-
-class UnconvertibleAddressTag implements AddressTagInterface
-{
-
 }

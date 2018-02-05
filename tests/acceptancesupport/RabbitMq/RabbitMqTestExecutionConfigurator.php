@@ -4,11 +4,13 @@ namespace acceptancesupport\PSB\Core\RabbitMq;
 
 use acceptancesupport\PSB\Core\Scenario\EndpointQueuesInformationProviderInterface;
 use acceptancesupport\PSB\Core\Scenario\EndpointTestExecutionConfiguratorInterface;
+use Markup\RabbitMq\ManagementApi\Api\Exchange;
+use Markup\RabbitMq\ManagementApi\Api\Queue;
 use PSB\Core\EndpointConfigurator;
 use PSB\Core\Transport\RabbitMq\Config\RabbitMqTransportConfigurator;
 use PSB\Core\Transport\RabbitMq\Config\RabbitMqTransportDefinition;
 use PSB\Core\Transport\RabbitMq\RoutingTopology;
-use RabbitMq\ManagementApi\Client;
+use Markup\RabbitMq\ManagementApi\Client;
 
 class RabbitMqTestExecutionConfigurator implements EndpointTestExecutionConfiguratorInterface,
     EndpointQueuesInformationProviderInterface
@@ -39,17 +41,19 @@ class RabbitMqTestExecutionConfigurator implements EndpointTestExecutionConfigur
     public function cleanup()
     {
         $rabbitmqClient = new Client();
-        $queues = $rabbitmqClient->queues()->all($this->connectionCredentials['vhost']);
+        $rabbitmqQueue = new Queue($rabbitmqClient);
+        $rabbitmqExchange = new Exchange($rabbitmqClient);
+        $queues = $rabbitmqQueue->all($this->connectionCredentials['vhost']);
         foreach ($queues as $queue) {
             if (strpos($queue['name'], 'acceptance.PSB') !== false) {
-                $rabbitmqClient->queues()->delete($this->connectionCredentials['vhost'], $queue['name']);
+                $rabbitmqQueue->delete($this->connectionCredentials['vhost'], $queue['name']);
             }
         }
 
-        $exchanges = $rabbitmqClient->exchanges()->all($this->connectionCredentials['vhost']);
+        $exchanges = $rabbitmqExchange->all($this->connectionCredentials['vhost']);
         foreach ($exchanges as $exchange) {
             if (strpos($exchange['name'], 'acceptance.PSB') !== false) {
-                $rabbitmqClient->exchanges()->delete($this->connectionCredentials['vhost'], $exchange['name']);
+                $rabbitmqExchange->delete($this->connectionCredentials['vhost'], $exchange['name']);
             }
         }
     }
@@ -83,9 +87,10 @@ class RabbitMqTestExecutionConfigurator implements EndpointTestExecutionConfigur
     private function getCountOfMessagesInQueueOf($endpointFqcn, $isErrorQueue)
     {
         $rabbitmqClient = new Client();
-        $queues = $rabbitmqClient->queues()->all($this->connectionCredentials['vhost']);
+        $rabbitmqQueue = new Queue($rabbitmqClient);
+        $queues = $rabbitmqQueue->all($this->connectionCredentials['vhost']);
         if ($this->queueExists($this->getQueueName($endpointFqcn, $isErrorQueue), $queues)) {
-            $messages = $rabbitmqClient->queues()->retrieveMessages(
+            $messages = $rabbitmqQueue->retrieveMessages(
                 $this->connectionCredentials['vhost'],
                 $this->getQueueName($endpointFqcn, $isErrorQueue),
                 20,

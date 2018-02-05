@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Pipeline\Incoming;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\MessageHandlerInterface;
 use PSB\Core\Pipeline\Incoming\InvokeHandlerTerminator;
 use PSB\Core\Pipeline\Incoming\StageContext\InvokeHandlerContext;

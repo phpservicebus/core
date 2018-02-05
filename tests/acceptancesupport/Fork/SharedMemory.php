@@ -62,7 +62,7 @@ class SharedMemory
             return unserialize($serializedMessages);
         }
 
-        return array();
+        return [];
     }
 
     /**
@@ -74,7 +74,7 @@ class SharedMemory
      */
     public function send($message, $signal = null, $pause = 500)
     {
-        $messageArray = array();
+        $messageArray = [];
 
         if (($shmId = @shmop_open($this->pid, 'a', 0, 0)) > 0) {
             // Read any existing messages in shared memory

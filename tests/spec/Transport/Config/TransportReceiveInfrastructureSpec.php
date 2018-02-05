@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Transport\Config;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Transport\Config\TransportReceiveInfrastructure;
 use specsupport\PSB\Core\SimpleCallable;
 

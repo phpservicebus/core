@@ -28,25 +28,25 @@ class ExceptionToHeadersConverter
     }
 
     /**
-     * @param \Exception $e
+     * @param \Throwable $t
      * @param string     $localAddress
      *
      * @return array
      */
-    public function convert(\Exception $e, $localAddress)
+    public function convert(\Throwable $t, $localAddress)
     {
         $headers = [
             ErrorLastResortHeaderTypeEnum::TIME_OF_FAILURE => $this->timeConverter->toWireFormattedString(
                 $this->clock->now(new \DateTimeZone('UTC'))
             ),
             ErrorLastResortHeaderTypeEnum::FAILED_QUEUE => $localAddress,
-            ErrorLastResortHeaderTypeEnum::EXCEPTION_TYPE => get_class($e),
-            ErrorLastResortHeaderTypeEnum::EXCEPTION_MESSAGE => $e->getMessage(),
-            ErrorLastResortHeaderTypeEnum::EXCEPTION_FILE => $e->getFile() . ':' . $e->getLine(),
-            ErrorLastResortHeaderTypeEnum::EXCEPTION_TRACE => $e->getTraceAsString()
+            ErrorLastResortHeaderTypeEnum::EXCEPTION_TYPE => get_class($t),
+            ErrorLastResortHeaderTypeEnum::EXCEPTION_MESSAGE => $t->getMessage(),
+            ErrorLastResortHeaderTypeEnum::EXCEPTION_FILE => $t->getFile() . ':' . $t->getLine(),
+            ErrorLastResortHeaderTypeEnum::EXCEPTION_TRACE => $t->getTraceAsString()
         ];
 
-        $pe = $e->getPrevious();
+        $pe = $t->getPrevious();
         if ($pe) {
             $headers[ErrorLastResortHeaderTypeEnum::PREV_EXCEPTION_TYPE] = get_class($pe);
             $headers[ErrorLastResortHeaderTypeEnum::PREV_EXCEPTION_MESSAGE] = $pe->getMessage();
