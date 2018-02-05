@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Feature;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Feature\Prerequisite;
 use specsupport\PSB\Core\SimpleCallable;
 

@@ -71,12 +71,12 @@ class MoveErrorsToErrorQueuePipelineStep implements PipelineStepInterface
         } catch (CriticalErrorException $e) {
             // all hope is gone
             throw $e;
-        } catch (\Exception $e) {
+        } catch (\Throwable $t) {
             $incomingMessage = $context->getMessage();
 
             $incomingMessage->revertToOriginalBodyIfNeeded();
 
-            $exceptionHeaders = $this->exceptionConverter->convert($e, $this->localAddress);
+            $exceptionHeaders = $this->exceptionConverter->convert($t, $this->localAddress);
             $newHeaders = array_merge($incomingMessage->getHeaders(), $exceptionHeaders);
 
             $outgoingMessage = new OutgoingPhysicalMessage(

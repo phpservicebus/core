@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Routing\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Pipeline\Outgoing\StageContext\UnsubscribeContext;
 use PSB\Core\Routing\Pipeline\UnsubscribeTerminator;
 use PSB\Core\Transport\SubscriptionManagerInterface;

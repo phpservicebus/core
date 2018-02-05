@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\ErrorHandling\FirstLevelRetry;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\ErrorHandling\FirstLevelRetry\FirstLevelRetryPolicy;
 
 /**

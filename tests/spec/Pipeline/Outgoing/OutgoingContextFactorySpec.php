@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Pipeline\Outgoing;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Pipeline\Outgoing\OutgoingContextFactory;
 use PSB\Core\Pipeline\Outgoing\OutgoingLogicalMessage;
 use PSB\Core\Pipeline\Outgoing\StageContext\DispatchContext;

@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Transport\RabbitMq;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Transport\RabbitMq\AmqpConnectionFactory;
 use PSB\Core\Transport\RabbitMq\RabbitMqKnownSettingsEnum;
 use PSB\Core\Util\Settings;

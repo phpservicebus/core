@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Pipeline\Incoming;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\EndpointControlToken;
 use PSB\Core\OutgoingOptionsFactory;
 use PSB\Core\Pipeline\BusOperations;
@@ -212,13 +211,4 @@ class IncomingContextSpec extends ObjectBehavior
         $this->endpointControlTokenMock->requestShutdown()->shouldBeCalled();
         $this->shutdownThisEndpointAfterCurrentMessage();
     }
-}
-
-namespace spec\PSB\Core\Pipeline\Incoming\IncomingContextSpec;
-
-use PSB\Core\Pipeline\Incoming\IncomingContext;
-
-class SampleIncomingContext extends IncomingContext
-{
-
 }

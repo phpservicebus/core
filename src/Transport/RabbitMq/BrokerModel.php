@@ -148,6 +148,10 @@ class BrokerModel
      * @param string $destinationName
      * @param string $sourceName
      * @param string $routingKey
+     *
+     * @throws \AMQPChannelException
+     * @throws \AMQPConnectionException
+     * @throws \AMQPExchangeException
      */
     public function unbindExchange($destinationName, $sourceName, $routingKey = '')
     {

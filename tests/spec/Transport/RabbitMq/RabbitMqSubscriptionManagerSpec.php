@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Transport\RabbitMq;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Transport\RabbitMq\BrokerModel;
 use PSB\Core\Transport\RabbitMq\RabbitMqSubscriptionManager;
 use PSB\Core\Transport\RabbitMq\RoutingTopology;

@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Feature;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\BusContextInterface;
 use PSB\Core\Feature\FeatureStartupTaskController;
 use PSB\Core\Feature\FeatureStartupTaskInterface;

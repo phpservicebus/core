@@ -3,7 +3,7 @@
 namespace spec\PSB\Core;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\BusContextInterface;
 use PSB\Core\EndpointInstance;
 use PSB\Core\PublishOptions;

@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Transport\RabbitMq;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Transport\RabbitMq\BrokerModel;
 use PSB\Core\Transport\RabbitMq\RoutingTopology;
 
@@ -139,14 +138,4 @@ class RoutingTopologySpec extends ObjectBehavior
 
         $this->sendToQueue($broker, $unsafeQueueName, $messageBody);
     }
-}
-
-namespace spec\PSB\Core\Transport\RabbitMq\RoutingTopologySpec;
-
-interface MessageInterface
-{
-}
-
-class Message implements MessageInterface
-{
 }

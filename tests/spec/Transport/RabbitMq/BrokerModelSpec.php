@@ -4,7 +4,7 @@ namespace spec\PSB\Core\Transport\RabbitMq;
 
 use AMQPConnection;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Transport\RabbitMq\BrokerModel;
 
 /**

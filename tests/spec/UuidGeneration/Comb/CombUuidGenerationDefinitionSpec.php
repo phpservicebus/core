@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\UuidGeneration\Comb;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Util\Settings;
 use PSB\Core\UuidGeneration\Comb\CombUuidGenerationConfigurator;
 use PSB\Core\UuidGeneration\Comb\CombUuidGenerationDefinition;

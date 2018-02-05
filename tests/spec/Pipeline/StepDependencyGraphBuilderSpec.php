@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Pipeline;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Exception\PipelineBuildingException;
 use PSB\Core\Pipeline\StepDependencyGraphBuilder;
 use PSB\Core\Pipeline\StepRegistration;

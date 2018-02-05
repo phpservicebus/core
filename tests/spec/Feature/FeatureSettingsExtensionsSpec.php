@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Feature;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Feature\FeatureSettingsExtensions;
 use PSB\Core\Feature\FeatureStateEnum;
 use PSB\Core\KnownSettingsEnum;

@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Outbox;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Outbox\OutboxTransportOperation;
 
 /**

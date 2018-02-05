@@ -1,15 +1,17 @@
 <?php
+
 namespace acceptancesupport\PSB\Core\PhpUnit;
 
 
-use acceptancesupport\PSB\Core\PhpUnit\ScenarioTestCase;
 use acceptancesupport\PSB\Core\Scenario\EndpointTestExecutionConfiguratorInterface;
 use Exception;
-use PHPUnit_Framework_AssertionFailedError;
-use PHPUnit_Framework_Test;
-use PHPUnit_Framework_TestSuite;
+use PHPUnit\Framework\AssertionFailedError;
+use PHPUnit\Framework\Test;
+use PHPUnit\Framework\TestListener;
+use PHPUnit\Framework\TestSuite;
+use PHPUnit\Framework\Warning;
 
-class TestExecutionConfiguratorLoader implements \PHPUnit_Framework_TestListener
+class TestExecutionConfiguratorLoader implements TestListener
 {
     /**
      * @var EndpointTestExecutionConfiguratorInterface
@@ -30,41 +32,45 @@ class TestExecutionConfiguratorLoader implements \PHPUnit_Framework_TestListener
 
     }
 
-    public function startTest(PHPUnit_Framework_Test $test)
+    public function startTest(Test $test)
     {
         /** @var ScenarioTestCase $test */
         $test->addEndpointTestExecutionConfigurator($this->configurator);
     }
 
-    public function endTest(PHPUnit_Framework_Test $test, $time)
+    public function endTest(Test $test, $time)
     {
     }
 
-    public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
+    public function addError(Test $test, Exception $e, $time)
     {
     }
 
-    public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
+    public function addWarning(Test $test, Warning $e, $time)
     {
     }
 
-    public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
+    public function addFailure(Test $test, AssertionFailedError $e, $time)
     {
     }
 
-    public function addRiskyTest(PHPUnit_Framework_Test $test, Exception $e, $time)
+    public function addIncompleteTest(Test $test, Exception $e, $time)
     {
     }
 
-    public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
+    public function addRiskyTest(Test $test, Exception $e, $time)
     {
     }
 
-    public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
+    public function addSkippedTest(Test $test, Exception $e, $time)
     {
     }
 
-    public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
+    public function startTestSuite(TestSuite $suite)
+    {
+    }
+
+    public function endTestSuite(TestSuite $suite)
     {
     }
 }

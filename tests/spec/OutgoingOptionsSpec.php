@@ -3,7 +3,6 @@
 namespace spec\PSB\Core;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\OutgoingOptions;
 use spec\PSB\Core\OutgoingOptionsSpec\SampleOptions;
 
@@ -37,12 +36,4 @@ class OutgoingOptionsSpec extends ObjectBehavior
         $this->setOutgoingHeaders(['some' => 'header']);
         $this->getOutgoingHeaders()->shouldReturn(['some' => 'header']);
     }
-}
-
-namespace spec\PSB\Core\OutgoingOptionsSpec;
-
-use PSB\Core\OutgoingOptions;
-
-class SampleOptions extends OutgoingOptions
-{
 }

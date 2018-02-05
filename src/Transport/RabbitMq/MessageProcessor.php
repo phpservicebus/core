@@ -66,7 +66,7 @@ class MessageProcessor
                 $messageId = $this->messageConverter->retrieveMessageId($envelope);
                 $headers = $this->messageConverter->retrieveHeaders($envelope);
                 $pushMessage = true;
-            } catch (\Exception $e) {
+            } catch (\Throwable $t) {
                 $this->routingTopology->sendToQueue(
                     $this->brokerModel,
                     $errorQueue,
@@ -95,7 +95,7 @@ class MessageProcessor
         } catch (CriticalErrorException $e) {
             // just ... die
             throw $e;
-        } catch (\Exception $e) {
+        } catch (\Throwable $t) {
             $queue->reject($envelope->getDeliveryTag(), AMQP_REQUEUE);
         }
 

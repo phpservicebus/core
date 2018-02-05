@@ -4,7 +4,7 @@ namespace spec\PSB\Core\Serialization\Json;
 
 use PhpSpec\Exception\Example\SkippingException;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\Exception\JsonSerializerException;
 use PSB\Core\Serialization\Json\JsonEncoder;
 
@@ -79,8 +79,8 @@ class JsonEncoderSpec extends ObjectBehavior
             throw new SkippingException("Unable to set an i18n locale.");
         }
 
-        $this->encode([1.0, 1.1, 0.00000000001, 1.999999999999, 223423.123456789, 1e5, 1e11])->shouldReturn(
-            '[1.0,1.1,1.0e-11,1.999999999999,223423.12345679,100000.0,100000000000.0]'
+        $this->encode([1.0, 1.1, 0.00000000001, 1.999999999999, 223423.12345678, 1e5, 1e11])->shouldReturn(
+            '[1.0,1.1,1.0e-11,1.999999999999,223423.12345678,100000.0,100000000000.0]'
         );
 
         setlocale(LC_NUMERIC, $originalLocale);

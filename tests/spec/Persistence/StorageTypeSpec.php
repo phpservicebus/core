@@ -3,7 +3,6 @@
 namespace spec\PSB\Core\Persistence;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use PSB\Core\Exception\UnexpectedValueException;
 use PSB\Core\Persistence\StorageType;
 use spec\PSB\Core\Persistence\StorageTypeSpec\AnotherStorageType;
@@ -53,20 +52,5 @@ class StorageTypeSpec extends ObjectBehavior
     function it_does_not_equal_another_storage_type_with_a_different_value()
     {
         $this->equals(AnotherStorageType::WHATEVER())->shouldBe(false);
-    }
-}
-
-namespace spec\PSB\Core\Persistence\StorageTypeSpec;
-
-use PSB\Core\Persistence\StorageType;
-
-class AnotherStorageType extends StorageType
-{
-    const WHATEVER = 'Whatever';
-    static protected $constants = ['WHATEVER' => self::WHATEVER];
-
-    static public function WHATEVER()
-    {
-        return new self(static::WHATEVER);
     }
 }

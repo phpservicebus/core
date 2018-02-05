@@ -3,7 +3,7 @@
 namespace spec\PSB\Core\Pipeline\Incoming\StageContext;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+
 use PSB\Core\EndpointControlToken;
 use PSB\Core\MessageHandlerInterface;
 use PSB\Core\OutgoingOptionsFactory;

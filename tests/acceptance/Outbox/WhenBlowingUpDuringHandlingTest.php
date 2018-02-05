@@ -115,7 +115,7 @@ class PlaceOrderHandler implements MessageHandlerInterface
         }
 
         self::$blownOnce = true;
-        throw new \Exception('simulated');
+        throw new \Error('simulated');
     }
 }
 
