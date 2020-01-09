@@ -24,7 +24,7 @@ class WhenAPersistenceDoesNotSupportOutboxTest extends ScenarioTestCase
             ->givenEndpoint(new NormalEndpoint())
             ->run();
 
-        $this->assertContains(
+        $this->assertStringContainsString(
             'disableFeature',
             $result->getErrorFor(NormalEndpoint::class)->getMessage(),
             "The exception message should have suggested disabling the outbox feature."

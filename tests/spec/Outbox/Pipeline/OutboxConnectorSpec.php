@@ -153,7 +153,7 @@ class OutboxConnectorSpec extends ObjectBehavior
         IncomingPhysicalMessageContext $physicalMessageContext
     ) {
         $context->getMessageId()->willReturn('id');
-        $next->__invoke()->willThrow(new \Exception());
+        $next->__invoke(Argument::any())->willThrow(new \Exception());
         $this->incomingContextFactoryMock->createPhysicalMessageContext($context)->willReturn($physicalMessageContext);
         $this->outboxStorageMock->get(Argument::any())->willReturn(null);
         $transportOperations = new PendingTransportOperations();

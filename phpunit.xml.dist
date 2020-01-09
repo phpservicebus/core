@@ -24,7 +24,7 @@
                   file="tests/acceptancesupport/PhpUnit/TestExecutionConfiguratorLoader.php">
             <arguments>
                 <string>acceptancesupport\PSB\Core\RabbitMq\RabbitMqTestExecutionConfigurator</string>
-                <array name="connection credentials">
+                <array>
                     <element key="host">
                         <string>127.0.0.1</string>
                     </element>

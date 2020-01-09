@@ -1,21 +1,28 @@
 language: php
 
-matrix:
-  include:
-    - php: 7.0
-    - php: 7.1
-      env: COLLECT_COVERAGE=true
+dist: bionic
 
-sudo: false
+addons:
+  apt:
+    packages:
+      - rabbitmq-server
 
 services:
   - rabbitmq
+
+matrix:
+  include:
+    - php: 7.2
+      env: COLLECT_COVERAGE=true
+    - php: 7.3
+    - php: 7.4
 
 install:
   - sudo add-apt-repository ppa:ondrej/php -y
   - sudo apt-get update
   - sudo apt-get install -y librabbitmq-dev
-  - echo | pecl install -f amqp-1.9.3
+  - echo | pecl install -f amqp-1.9.4
+  - sudo rabbitmq-plugins enable rabbitmq_management
 
 before_script:
   - travis_retry composer self-update

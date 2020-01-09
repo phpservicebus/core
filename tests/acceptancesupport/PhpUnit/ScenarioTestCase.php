@@ -18,7 +18,7 @@ abstract class ScenarioTestCase extends TestCase
      */
     protected $executionConfigurators = [];
 
-    public function setUp()
+    public function setUp(): void
     {
         if (!$this->scenario) {
             $this->scenario = new ScenarioBuilder($this->executionConfigurators);
@@ -34,7 +34,7 @@ abstract class ScenarioTestCase extends TestCase
         $this->executionConfigurators[get_class($executionConfigurator)] = $executionConfigurator;
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if ($this->scenario->getScenario()) {
             $this->scenario->getScenario()->cleanup();
