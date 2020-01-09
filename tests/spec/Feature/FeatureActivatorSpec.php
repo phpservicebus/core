@@ -11,6 +11,8 @@ use PSB\Core\KnownSettingsEnum;
 use PSB\Core\ObjectBuilder\BuilderInterface;
 use PSB\Core\Pipeline\PipelineModifications;
 use PSB\Core\Util\Settings;
+use spec\PSB\Core\Feature\FeatureActivatorSpec\FeatureOne;
+use spec\PSB\Core\Feature\FeatureActivatorSpec\FeatureTwo;
 
 /**
  * @mixin FeatureActivator
@@ -115,8 +117,8 @@ class FeatureActivatorSpec extends ObjectBehavior
         Settings $settings,
         BuilderInterface $builder,
         PipelineModifications $pipelineModifications,
-        Feature $feature,
-        Feature $dependencyFeature
+        FeatureOne $feature,
+        FeatureTwo $dependencyFeature
     ) {
         $this->beConstructedWith($settings);
         $settings->tryGet(get_class($feature->getWrappedObject()))->willReturn(FeatureStateEnum::ENABLED);
@@ -147,8 +149,8 @@ class FeatureActivatorSpec extends ObjectBehavior
         Settings $settings,
         BuilderInterface $builder,
         PipelineModifications $pipelineModifications,
-        Feature $feature,
-        Feature $dependencyFeature
+        FeatureOne $feature,
+        FeatureTwo $dependencyFeature
     ) {
         $this->beConstructedWith($settings);
         $settings->tryGet(get_class($feature->getWrappedObject()))->willReturn(FeatureStateEnum::ENABLED);

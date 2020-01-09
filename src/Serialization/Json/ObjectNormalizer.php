@@ -88,8 +88,13 @@ class ObjectNormalizer
         }
         $this->objectToIndex->attach($object, $this->objectIndex++);
 
-        $normalizedObject = [$this->classAnnotation => get_class($object)];
-        $normalizedObject += array_map([$this, 'normalizeValue'], $this->extractObjectProperties($object));
+        $className = get_class($object);
+        $normalizedObject = [$this->classAnnotation => $className];
+        if ($className === 'DateTime') {
+            $normalizedObject += (array) $object;
+        } else {
+            $normalizedObject += array_map([$this, 'normalizeValue'], $this->extractObjectProperties($object));
+        }
 
         return $normalizedObject;
     }
@@ -243,6 +248,7 @@ class ObjectNormalizer
             'O:' . strlen($className) . ':"' . $className . '":',
             serialize($obj)
         );
+
         return unserialize($serialized);
     }
 }
