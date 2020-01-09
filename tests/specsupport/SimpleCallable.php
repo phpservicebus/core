@@ -3,7 +3,7 @@ namespace specsupport\PSB\Core;
 
 class SimpleCallable
 {
-    public function __invoke()
+    public function __invoke($argument = null)
     {
     }
 }
