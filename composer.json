@@ -17,12 +17,6 @@
       "email": "alex.farcas@gmail.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/ghola/php-rabbitmq-management-api.git"
-    }
-  ],
   "require": {
     "php": "^7.2,<7.5",
     "ext-mbstring": "*",
@@ -37,7 +31,7 @@
     "phpunit/phpunit": "8.5.2",
     "bossa/phpspec2-expect": "3.1.1",
     "empi89/php-amqp-stubs": "dev-master",
-    "markup/rabbitmq-management-api": "dev-master#91509b6b2f53cd2dc1fdc4335421cad4de55e96e",
+    "markup/rabbitmq-management-api": "2.1.4",
     "friends-of-phpspec/phpspec-code-coverage": "4.3.2"
   },
   "autoload": {
